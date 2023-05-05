@@ -5,6 +5,7 @@ import { store } from './app/store';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './index.css';
+import Dashboard from './features/dashboard/Dashboard';
 
 const container = document.getElementById('root')!;
 const root = createRoot(container);
@@ -12,7 +13,8 @@ const root = createRoot(container);
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+      {/* <App /> */}
+      <Dashboard />
     </Provider>
   </React.StrictMode>
 );
