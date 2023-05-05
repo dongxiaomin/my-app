@@ -6,6 +6,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './index.css';
 import Dashboard from './features/dashboard/Dashboard';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 const container = document.getElementById('root')!;
 const root = createRoot(container);
@@ -13,8 +14,12 @@ const root = createRoot(container);
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      {/* <App /> */}
-      <Dashboard />
+      <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<App/>}></Route>
+            <Route path="/dashboard" element={<Dashboard/>}></Route>
+          </Routes>
+      </BrowserRouter>
     </Provider>
   </React.StrictMode>
 );

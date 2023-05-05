@@ -1,22 +1,30 @@
-import './index.css';
-import { Layout } from '@arco-design/web-react';
-const Sider = Layout.Sider;
-const Header = Layout.Header;
-const Footer = Layout.Footer;
-const Content = Layout.Content;
+import React from 'react';
+import { Layout, Space, Button } from 'antd';
+import styles from './Dashboard.module.css';
+import { useNavigate } from 'react-router-dom';
+import { PostsList } from '../posts/PostsList';
+import { AddPostForm } from '../posts/AddPostForm';
+
+const { Header, Content } = Layout;
 
 const Dashboard = () => {
+  const navigate = useNavigate();
+  const handClick = () => {
+    navigate(-1)
+  };
   return (
-    <div className='layout-basic-demo'>
-      <Layout style={{ height: '100vh' }}>
-        <Header>Header</Header>
+    <Space direction="vertical" style={{ width: '100%' }} size={[0, 48]}>
+      <Layout>
+        <Header className={styles.header}>平台</Header>
         <Layout>
-          <Sider>Sider</Sider>
-          <Content>Content</Content>
+          <Content className={styles.contentStyle}>
+            <Button onClick={handClick}>Return to the previous page</Button> 
+            <AddPostForm />
+            <PostsList />
+          </Content>
         </Layout>
-        <Footer>Footer</Footer>
       </Layout>
-    </div>
+    </Space>
   );
 };
 

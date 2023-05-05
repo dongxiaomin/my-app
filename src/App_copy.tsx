@@ -2,17 +2,10 @@ import React from 'react';
 import logo from './logo.svg';
 import { Counter } from './features/counter/Counter';
 import './App.css';
-import { Button } from 'antd';
-import { useNavigate } from 'react-router-dom';
 
 function App() {
-  const navigate = useNavigate();
-  const handClick = () => {
-    navigate('/dashboard');
-  };
   return (
     <div className="App">
-      <Button onClick={handClick}>Go to next page</Button>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <Counter />

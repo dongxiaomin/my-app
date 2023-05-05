@@ -1,0 +1,14 @@
+.header{
+  text-align: left;
+  height: 64px;
+  color: #fff;
+  padding-inline: 25px;
+  line-height: 64px;
+  background-color: #333;
+}
+
+.contentStyle{
+  padding: 25px;
+  height: calc(100vh - 64px);
+  border: 1px solid #ccc;
+}
