@@ -11,7 +11,7 @@ const { Header, Content } = Layout;
 const Dashboard = () => {
   const navigate = useNavigate();
   const handClick = () => {
-    navigate(-1)
+    navigate('/')
   };
   return (
     <Space direction="vertical" style={{ width: '100%' }} size={[0, 48]}>

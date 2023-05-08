@@ -8,7 +8,7 @@ import './index.css';
 import Dashboard from './features/dashboard/Dashboard';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { SinglePostPage } from './features/posts/SinglePostPage';
-// import { Routes, Route } from "react-router-dom";
+import { EditPostForm } from './features/posts/EditPostForm';
 
 const container = document.getElementById('root')!;
 const root = createRoot(container);
@@ -21,6 +21,7 @@ root.render(
             <Route path="/" element={<App/>}></Route>
             <Route path="/dashboard" element={<Dashboard/>}></Route>
             <Route path="/posts/:postId" element={<SinglePostPage />}></Route>
+            <Route path="/editPost/:postId" element={<EditPostForm />}></Route>
           </Routes>
       </BrowserRouter>
     </Provider>
