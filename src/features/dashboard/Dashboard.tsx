@@ -4,6 +4,7 @@ import styles from './Dashboard.module.css';
 import { useNavigate } from 'react-router-dom';
 import { PostsList } from '../posts/PostsList';
 import { AddPostForm } from '../posts/AddPostForm';
+import { Navbar } from '../../app/Navbar';
 
 const { Header, Content } = Layout;
 
@@ -19,6 +20,7 @@ const Dashboard = () => {
         <Layout>
           <Content className={styles.contentStyle}>
             <Button onClick={handClick}>Return to the previous page</Button> 
+            <Navbar />
             <AddPostForm />
             <PostsList />
           </Content>

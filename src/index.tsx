@@ -7,6 +7,8 @@ import reportWebVitals from './reportWebVitals';
 import './index.css';
 import Dashboard from './features/dashboard/Dashboard';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { SinglePostPage } from './features/posts/SinglePostPage';
+// import { Routes, Route } from "react-router-dom";
 
 const container = document.getElementById('root')!;
 const root = createRoot(container);
@@ -18,6 +20,7 @@ root.render(
           <Routes>
             <Route path="/" element={<App/>}></Route>
             <Route path="/dashboard" element={<Dashboard/>}></Route>
+            <Route path="/posts/:postId" element={<SinglePostPage />}></Route>
           </Routes>
       </BrowserRouter>
     </Provider>
