@@ -1,10 +1,21 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { fetchPosts } from './postsSlice';
 
 export const PostsList = () => {
   const posts = useSelector(state => state.postsStore)
+  const dispatch = useDispatch()
+  // const postStatus = posts.status
 
+  // useEffect(() => {
+  //   if (postStatus === 'idle') {
+  //     dispatch(fetchPosts())
+  //   }
+  // }, [postStatus, dispatch])
+  // useEffect(() => {
+  //   dispatch(fetchPosts())
+  // })
   const renderedPosts = posts.map(post => (
     <article className="post-excerpt" key={post.id}>
       <h3>{post.title}</h3>

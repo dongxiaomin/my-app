@@ -1,4 +1,7 @@
 const path = require('path')
+const webpack = require('webpack')
+
+
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const InterpolateHtmlPlugin = require('interpolate-html-plugin')
 
@@ -8,7 +11,7 @@ module.exports = {
         filename: 'static/js/[name].js', // 每个输出js的名称
         path: path.join(__dirname, '../dist'), // 打包结果输出路径
         clean: true, // webpack4需要配置clean-webpack-plugin来删除dist文件,webpack5内置了
-        publicPath: '/' // 打包后文件的公共前缀路径
+        publicPath: '/test' // 打包后文件的公共前缀路径
     },
     module: {
         rules: [
@@ -19,6 +22,7 @@ module.exports = {
                     options: {
                         // 预设执行顺序由右往左,所以先处理ts,再处理jsx
                         presets: [
+                            "@babel/preset-env",
                             '@babel/preset-react',
                             '@babel/preset-typescript'
                         ]
@@ -26,9 +30,20 @@ module.exports = {
                 }
             },
             {
-                test: /\.(module.css|css)$/,
-                // use: 'css-loader'
-                use: ['style-loader','css-loader']
+                test: /\.(module.css|css|less)$/,
+                use: [
+                    'style-loader',
+                    'css-loader',
+                    'less-loader',
+                    {
+                        loader: 'postcss-loader', //兼容css3前缀 
+                        options: {
+                            postcssOptions: {
+                                plugins: ['autoprefixer']
+                            }
+                        }
+                    },
+                ]
             },
             {
                 test: /\.ico/,
@@ -36,7 +51,7 @@ module.exports = {
             },
             {
                 test: /\.(png|jpg|gif|svg)$/,
-                loader:'file-loader',
+                loader: 'file-loader',
                 options: {
                     name: 'images/[name].[ext]'
                 }
@@ -53,7 +68,19 @@ module.exports = {
         }),
         new InterpolateHtmlPlugin({
             PUBLIC_URL: 'static' // can modify `static` to another name or get it from `process`
-        })
+        }),
+        // new webpack.DefinePlugin({
+        //     'process.env.BASE_ENV': JSON.stringify(process.env.BASE_ENV)
+        // }),
+        // new webpack.EnvironmentPlugin(['NODE_ENV', 'BASE_ENV'])
+        new webpack.DefinePlugin({
+            'process.env.BASE_ENV': JSON.stringify(process.env.BASE_ENV)
+        }),
     ],
 }
 
+
+console.log('NODE_ENV---', process.env.NODE_ENV)
+console.log('BASE_ENV---', process.env.BASE_ENV)
+// console.log('BASE_ENV---', JSON.stringify(process.env.BASE_ENV))
+// new webpack.EnvironmentPlugin( { ...process.env } )

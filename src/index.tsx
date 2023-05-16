@@ -13,6 +13,9 @@ import { EditPostForm } from './features/posts/EditPostForm';
 const container = document.getElementById('root')!;
 const root = createRoot(container);
 
+console.log('NODE_ENV', process.env.NODE_ENV)
+console.log('BASE_ENV', process.env.BASE_ENV)
+
 root.render(
   <React.StrictMode>
     <Provider store={store}>

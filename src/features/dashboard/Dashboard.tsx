@@ -23,6 +23,7 @@ const Dashboard = () => {
             <Navbar />
             <AddPostForm />
             <PostsList />
+            <input type="color"></input>
           </Content>
         </Layout>
       </Layout>

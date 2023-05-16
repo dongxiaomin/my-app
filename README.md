@@ -1,7 +1,7 @@
 启动项目: npm start
 webpack打包: 
 npm run dev   (启3001端口)
-npm run build (生成dist文件,根目录执行serve -s dist, 启动打包后的项目)
+npm run build (生成dist文件,根目录执行 serve -s dist, 启动打包后的项目)
 
 
 ref: https://github.com/guojiongwei/webpack5-react-ts
