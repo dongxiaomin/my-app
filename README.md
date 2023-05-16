@@ -6,6 +6,13 @@ npm run build (生成dist文件,根目录执行serve -s dist, 启动打包后的
 
 ref: https://github.com/guojiongwei/webpack5-react-ts
 
+
+
+
+用动画和实战打开 React Hooks（一）：useState 和 useEffect: https://juejin.cn/post/6844904127110053895
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) TS template.

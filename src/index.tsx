@@ -9,7 +9,8 @@ import Dashboard from './features/dashboard/Dashboard';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { SinglePostPage } from './features/posts/SinglePostPage';
 import { EditPostForm } from './features/posts/EditPostForm';
-
+import Recharts from './features/recharts/Recharts';
+ 
 const container = document.getElementById('root')!;
 const root = createRoot(container);
 
@@ -20,6 +21,7 @@ root.render(
           <Routes>
             <Route path="/" element={<App/>}></Route>
             <Route path="/dashboard" element={<Dashboard/>}></Route>
+            <Route path="/recharts" element={<Recharts/>}></Route>
             <Route path="/posts/:postId" element={<SinglePostPage />}></Route>
             <Route path="/editPost/:postId" element={<EditPostForm />}></Route>
           </Routes>

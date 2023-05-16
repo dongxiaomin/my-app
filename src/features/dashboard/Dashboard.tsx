@@ -13,6 +13,10 @@ const Dashboard = () => {
   const handClick = () => {
     navigate('/')
   };
+  
+  const handClick2 = () => {
+    navigate('/recharts')
+  };
   return (
     <Space direction="vertical" style={{ width: '100%' }} size={[0, 48]}>
       <Layout>
@@ -23,6 +27,7 @@ const Dashboard = () => {
             <Navbar />
             <AddPostForm />
             <PostsList />
+            <Button onClick={handClick2}>Go go recharts page</Button> 
           </Content>
         </Layout>
       </Layout>
