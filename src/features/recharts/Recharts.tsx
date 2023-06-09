@@ -11,7 +11,6 @@ const Recharts = () => {
   const handClick = () => {
     navigate('/dashboard')
   };
-  const [globalStats, setGlobalStats] = useState({});
   const [countries, setCountries] = useState([]);
   const [key, setKey] = useState("cases");
 

@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { PostsList } from '../posts/PostsList';
 import { AddPostForm } from '../posts/AddPostForm';
 import { Navbar } from '../../app/Navbar';
+import UseCallback from '../useCallbackDemo/UseCallback';
 
 const { Header, Content } = Layout;
 
@@ -28,6 +29,10 @@ const Dashboard = () => {
             <AddPostForm />
             <PostsList />
             <Button onClick={handClick2}>Go go recharts page</Button> 
+            <br />
+            ---- UseCallback use ----
+            <br />
+            <UseCallback />
           </Content>
         </Layout>
       </Layout>
