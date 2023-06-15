@@ -14,7 +14,7 @@ class DemoTwo extends React.Component {
     };
 
     render() {
-        console.log('render');
+        // console.log('render');
         let { title } = this.props,
             { supNum, oppNum } = this.state;
         return <div>
@@ -40,10 +40,10 @@ class DemoTwo extends React.Component {
         </div>
     }
     UNSAFE_componentWillMount(){
-        console.log('第一次渲染前')
+        // console.log('第一次渲染前')
     }
     componentDidMount(){
-        console.log('第一次渲染完毕')
+        // console.log('第一次渲染完毕')
     }
 }
 

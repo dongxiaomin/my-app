@@ -4,6 +4,9 @@ import '@/index.less';
 import DemoOne from './views/DemoOne';
 import DemoTwo from './views/DemoTwo';
 import DemoThree from './views/DemoThree';
+// import FastClick from 'fastclick';
+
+// FastClick.attach(document.body);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
